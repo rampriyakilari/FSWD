@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        color: red;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 30px;
+        font-style: italic;
+      }
+      #data {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="name" type="name" placeholder="enter your name" />
+    <button type="submit" onClick="handleClick()">click</button>
+    <br />
+    <div id="data"></div>
+  
+    <script>
+      function handleClick() {
+        if (typeof Storage !== "undefined") {
+          let name = document.getElementById("name").value;
+          localStorage.setItem("name", name);
+  
+          document.getElementById("data").innerHTML =
+            "Welcome " + " " + localStorage.name;
+        } else {
+          alert("Sorry! your browser doesn't support Web Storage");
+        }
+      }
+    </script>
+  </body>
+</html>

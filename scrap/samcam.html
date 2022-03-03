@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sample Canvas</title>
+<body>
+    <p>Example of line in Canvas</p>
+    <canvas id="myCanvas" width="500" height="300" style="border:1px solid#000000;"></canvas>
+    <p>Example to draw circle in the Canvas</p>
+    <canvas id="myCircle" width="500" height="300" style="border:2px solid#000256;"></canvas> 
+    <p>Example to add Text in the Canvas</p>
+    <canvas id="myText" width="400" height="400" style="border:3px solid#00000F;"></canvas>
+    <script>
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+        ctx.moveTo(0,0);
+        ctx.lineTo(500,300);
+        ctx.stroke();
+        var dc=document.getElementById("myCircle");
+        var dcx=dc.getContext("2d");
+        dcx.beginPath();
+        dcx.arc(250,200,50,0,2*Math.PI);
+        dcx.stroke();
+        var t=document.getElementById("myText");
+        var dt=get.getContext("2d");
+        dt.font="20px Calibri";
+        dt.fillText("Welcome",30,40);
+    </script>
+</body>
+</html>
+
+

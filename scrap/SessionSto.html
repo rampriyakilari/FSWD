@@ -1,0 +1,37 @@
+<!DOCTYPE html>  
+<html>  
+<head> 
+  <style>  
+      body {  
+        color: purple;  
+        text-align: center;  
+        font-size: 40px;  
+        margin-top: 40px;  
+        font-style: bold;  
+      }  
+      #data {
+        text-align: center;
+      }
+  </style>  
+</head>  
+<body>  
+    <input id="name" type="name" placeholder="enter your name" >
+    <button type="submit" onClick="handleClick()">click</button>
+    <br>
+    <div id="data"></div>
+    <script>  
+      function handleClick() {
+        if(typeof(Storage)!=="undefined") {  
+          let name = document.getElementById("name").value;
+            sessionStorage.setItem("name", name);
+  
+            document.getElementById("data").innerHTML = 
+              ("Hello"+" "+sessionStorage.name);  
+          }  
+          else{  
+            alert("Sorry! your browser is not supporting the browser")  
+          }  
+       }
+    </script> 
+</body>  
+</html>

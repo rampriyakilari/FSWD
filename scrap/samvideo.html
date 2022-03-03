@@ -1,0 +1,21 @@
+<html>
+<body>
+<video width="300" height="300" autoplay muted>
+	<source src="mov_bbb.mp4" type="video/mp4">
+</video>
+<p>Here is an audio </p>
+<audio controls>
+	<source src="song.mp3" type="audio/mp3">
+</audio>
+
+<p>Here goes an example for canvas</p>
+<canvas id="myCanvas" width="200" height="100" style="border:2px solid #000000;"></canvas>
+<script>
+ 	var x=document.getElementById("myCanvas");
+	var ctx=x.getContext("2d");
+	ctx.moveTo(0, 0);
+	ctx.lineTo(200, 100);
+	ctx.stroke();
+</script>
+</body>
+</html>

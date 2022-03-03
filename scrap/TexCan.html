@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Text in Canvas</title>
+<body>
+    <p>Example of Text in Canvas</p>
+    <canvas id="myText" width="500" height="300" style="border:1px solid#000000;"></canvas>
+    <script>
+        var t=document.getElementById("myText");
+        var dtx=t.getContext("2d");
+        dtx.font="30px Arial";
+        dtx.strokeText("welcome",30,40);
+    </script>
+</body>
+</html>

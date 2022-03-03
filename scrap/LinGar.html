@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>draw linear Gradient</title>
+<body>
+    <img id="myImgSam" width="500" height="500" src="imagesam.jpeg" alt="imagesam">
+    <p>Example of linear Gradient in Canvas</p>
+    <canvas id="myGrad" width="500" height="300" style="border:1px solid#000000;"></canvas>
+    <p>Example to create radial Gradient</p>
+    <canvas id="myRaGrad" width="500" height="300" style="border:1px solid#000000;"></canvas>
+    <p>Drawing an image in the canvas</p>
+    <canvas id="myImg" width="1000" height="1000" style="border:1px solid#0000FF;"></canvas>
+    <script>
+        var c=document.getElementById("myGrad");
+        var ctx=c.getContext("2d");
+        var gar=ctx.createLinearGradient(0,0,400,0);
+        gar.addColorStop(0, "red");
+        gar.addColorStop(1,"white");
+        ctx.fillStyle = gar;
+        ctx.fillRect(0,0,150,80);
+        var r=document.getElementById("myRaGrad");
+        var rctx=r.getContext("2d");
+        var rgad=rctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        rgad.addColorStop(0,"blue");
+        rgad.addColorStop(1,"pink");
+        rctx.fillStyle = rgad;
+        rctx.fillRect(20,20,250,80);
+        window.onload = function(){
+        var i=document.getElementById("myImg");
+        var ictx=i.getContext("2d");
+        var img=document.getElementById("myImgSam");
+        ictx.drawImg(img,10,10);
+        };
+    </script>
+</body>
+</html>
