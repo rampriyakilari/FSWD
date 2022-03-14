@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-#div1 {
+#div1 , #div2{
   width: 600px;
   height: 300px;
   padding: 10px;
@@ -26,12 +26,9 @@ function drop(ev) {
 </script>
 </head>
 <body>
-
 <p>Drag the image into the rectangle box</p>
-
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<br>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <img id="drag1" src="imagesam.jpg" draggable="true" ondragstart="drag(event)" width="600" height="300">
-
 </body>
 </html>
