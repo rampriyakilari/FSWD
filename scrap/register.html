@@ -17,27 +17,108 @@
             background-size: cover;
         }
     </style>
+  <script>
+   // Select all input elements for varification
+   const userName = document.getElementById("name");
+   const email = document.getElementById("email");
+   const password = document.getElementById("pwd");
+   const phoneNumber = document.getElementById("num");
+   const gender = document.myForm;
+   const language = document.getElementById("language");
+   const zipcode = document.getElementById("zipcode");
+   
+   // function for form varification
+   function formValidation() {
+     // checking length of name
+     if (userName.value.length < 2 || userName.value.length > 20) {
+       alert("Name length should be more than 2 and less than 21 charaters");
+       userName.focus();
+       return false;
+     }
+     // checking email format
+     if (email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+       alert("Please enter a valid email!");
+       email.focus();
+       return false;
+     }
+     // checking password character pattern
+     if (password.value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/)) {
+       alert("Password must contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character, and must be between 8 and 15 characters long.");
+       password.focus();
+       return false;
+     }
+     // checking phone number
+     if (!phoneNumber.value.match(/^[1-9][0-9]{9}$/)) {
+       alert("Phone number must be 10 characters long number and first digit can't be 0!");
+       phoneNumber.focus();
+       return false;
+     }
+     // checking gender
+     if (gender.gender.value === "") {
+       alert("Please select your gender!");
+       return false;
+     }
+     // checking language
+     if (language.value === "") {
+       alert("Please select your language!")
+       return false;
+     }
+     // checking zip code
+     if (!zipcode.value.match(/^[0-9]{6}$/)) {
+       alert("Zip code must be 6 characters long number!");
+       zipcode.focus();
+       return false;
+     }
+     return true;
+   }
+  </script>
 </head>
 <body>
     <div class="container">
         <h2>Register to SaveAnimals.com</h2>
-        <form action="#">
+        <form name="myForm" action="#"  class="registration-form" onsubmit="return formValidation()">
             <div class="form-group">
                 <label for="fullname"><b>FullName:</b></label>
-                <input type="FullName" class="form-control" id="name" placeholder="Enter fullname" name="email">
+                <input type="FullName" class="form-control" id="name" placeholder="Enter fullname" name="name" required>
             </div>
           <div class="form-group">
             <label for="email"><b>Email:</b></label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
           </div>
           <div class="form-group">
             <label for="pwd"><b>Password:</b></label>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required>
+          </div>
+          <div class="form-group">
+            <label for="number"><b>Phone Number:</b></label>
+            <input type="number" class="form-control" id="num" placeholder="Enter phone number" name="phonenum" required>
+          </div>
+          <div class="form-group">
+            <label for="gender"><b>Gender:</b></label>
+            <b>Male</b><input type="radio" id="male" name="gender" value="male">
+          <b>Female</b><input type="radio" id="female" name="gender" value="female" >
+            <b>Other</b><input type="radio" id="other" name="gender" value="other" >
+          </div>
+          <div class="form-group">
+            <label for="language"><b>Language:</b></label>
+            <select name="language" id="language">
+              <option value="select language">Select Language</option>
+              <option value="English">English</option>
+              <option value="Telugu">Telugu</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="zipcode"><b>Zip Code:</b></label>
+            <input type="number" class="form-control" id="zipcode" placeholder="Enter ZipCode" name="zipcode" required>
+          </div>
+          <div class="form-group">
+            <label for="about"><b>About:</b></label>
+            <textarea class="form-control" id="about" placeholder="write about you" name="about"></textarea>
           </div>
           <div class="checkbox">
             <label><input type="checkbox" name="remember"><b> Remember me</b></label>
           </div>
-          <button type="submit" class="btn btn-default"><b>Submit</b></button>
+          <button type="submit" class="btn btn-default"><b>Register</b></button>
           <button type="reset" class="btn btn-default"><b>Reset</b></button>
         </form>
       </div>
