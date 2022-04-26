@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+         body{
+              text-align: center; font-family: sans-serif;
+               }   
+         h1{font-size: 20px;
+             }  
+         
+table tr td {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+fieldset{width:500px; text-align: center}
+
+        </style>
+        <div id="header">
+    <h1>Registration</h1>
+        </div>
+
+    <div id="content">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Register</title>
+    </head>
+    <script>
+ function validate()
+ {
+     
+      var fn = frm.fname.value;
+     for(x in fn)
+         {
+             ch=fn.charCodeAt(x);
+             if(ch<65||ch>90 && ch<97||ch>122)
+                 {
+                 alert("Invalid firstname");
+                 return false;
+                 }
+         }
+         var ln = frm.lname.value;
+     for(y in ln)
+         {
+             ch=ln.charCodeAt(y);
+             if(ch<65||ch>90 && ch<97||ch>122)
+                 {
+                 alert("Invalid lastname");
+                 return false;
+                 }
+         }
+     var phn = frm.phone.value;
+     var lenp = phn.length;
+     if (lenp!==10)
+     {    alert("Phone no should be exactly 10 digits");
+         return false;
+     }
+    
+    var pwd1=frm.pwd.value;
+    var pwdl=pwd1.length;
+    if(pwdl%2===1)
+        {
+        alert("Password should contain even number of characters");
+        return false;
+        }
+    if(pwdl > 8)
+        {
+            alert("Password should not exceed 8 digits");
+            return false;
+        }
+   
+     var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+     var mail=frm.mailid.value;
+if (reg.test(mail)){
+alert("Valid email"); }
+else{
+    alert("Invalid email");
+return false;
+}
+ 
+        
+    return true;
+ }
+ 
+    </script>
+    <div id="container">
+    <body>
+    <center>
+        <form name="frm" method="POST" action="success.html" onSubmit="return validate()">
+            
+            <fieldset align="center">
+            
+                <table align="center">
+                    
+                     <tr><td>First Name: </td><td><input type="text" name="fname"  value="" size="50" required/></td></tr>
+                     <tr><td>Last Name: </td><td> <input type="text" name="lname" value="" size="50" required/></td></tr>
+                     <tr><td>Phone No: </td><td>  <input type="text" name="phone" value="" size="50" required/></td></tr>
+                    <tr><td>Mail id:</td><td><input type="email" name="mailid" value="" size="50" required/></td></tr>
+                    <tr><td>Gender:</td>
+                        <td>Male:  <input type="radio" name="gender" value="male" >
+                            Female:   <input type="radio" name="gender" value="female"></td></tr>
+                    <tr><td>DOB :</td><td><input type="date" name="dob" size="50" required/></td></tr>
+                    
+                    <tr><td>Username:</td><td><input type="text" name="uname" value="" size="50" required/></td></tr>
+                    <tr><td>Password:</td><td><input type="password" name="pwd" value="" size="50" required/></td></tr>
+                    
+                    <tr><td>Age:</td><td><input type="text" name="age" value="" size="50" required/></td></tr>
+                </table>
+                <input type="submit" value="SUBMIT" name="submit" />
+          
+            </fieldset>
+        </form>
+    </div>
+        </center>
+    </body>
+    <div id="footer">
+        Copyright ©  CMRIT_2022
+    </div>
+</div>
+</html>
